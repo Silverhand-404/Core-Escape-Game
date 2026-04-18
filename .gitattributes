@@ -1,0 +1,33 @@
+# =====================
+# Unity text files
+# =====================
+*.cs text eol=lf
+*.shader text eol=lf
+*.cginc text eol=lf
+*.compute text eol=lf
+*.unity text eol=lf
+*.prefab text eol=lf
+*.asset text eol=lf
+*.meta text eol=lf
+*.mat text eol=lf
+*.anim text eol=lf
+
+# =====================
+# Force binary
+# =====================
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.fbx binary
+*.tga binary
+*.wav binary
+*.mp3 binary
+*.mp4 binary
+
+# =====================
+# Unity YAML merge driver
+# =====================
+*.unity merge=unityyamlmerge eol=lf
+*.prefab merge=unityyamlmerge eol=lf
+*.asset merge=unityyamlmerge eol=lf
+*.mat merge=unityyamlmerge eol=lf
