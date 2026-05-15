@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    private float moveSpeed = 3.5f;
+    public float moveSpeed = 5f;
     private float jumpForce = 7f;
     private float coliderDistance = 0.05f;
 
