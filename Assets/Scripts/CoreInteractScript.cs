@@ -44,6 +44,7 @@ public class CoreInteractScript : MonoBehaviour
             playerNearby = false;
             // скрытие подсказки
             interactText.SetActive(false);
+            player = null;
         }
     }
 

@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    private float jumpForce = 7f;
-    private float coliderDistance = 0.05f;
+    [SerializeField] private float jumpForce = 7f;
+    [SerializeField] private float colliderDistance = 0.05f;
 
     private bool jumpPressed;
     private float hInput;
@@ -47,7 +47,7 @@ public class PlayerScript : MonoBehaviour
     //Проверка контакта с землей (для прыжка)
     private bool IsGrounded()
     {
-        Vector2 boxBottom = new Vector2(_col.bounds.center.x, _col.bounds.min.y - coliderDistance);
+        Vector2 boxBottom = new Vector2(_col.bounds.center.x, _col.bounds.min.y - colliderDistance);
         Vector2 boxColiderSize = new Vector2(_col.size.x*0.7f, 0.1f);
         bool grounded = Physics2D.OverlapBox(boxBottom, boxColiderSize, 0f, groundLayerMask);
         return grounded;

@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class RoomStateScript : MonoBehaviour
 {
-    // номер комнаты в массиве RoomManager
-    public int roomIndex;
     // состояние комнаты
     public GameObject state1;
     public GameObject state2;
