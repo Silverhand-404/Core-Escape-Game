@@ -2,33 +2,33 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    public static CameraScript Instance; // Чтобы другие скрипты могли обращатсья к камере
-    public float moveSpeed = 5f; // Скорость движения камеры
+    public static CameraScript Instance; // Р§С‚РѕР±С‹ РґСЂСѓРіРёРµ СЃРєСЂРёРїС‚С‹ РјРѕРіР»Рё РѕР±СЂР°С‰Р°С‚СЃСЊСЏ Рє РєР°РјРµСЂРµ
+    public float moveSpeed = 5f; // РЎРєРѕСЂРѕСЃС‚СЊ РґРІРёР¶РµРЅРёСЏ РєР°РјРµСЂС‹
 
-    private Vector3 targetPosition; // Цель перемещения камеры
+    private Vector3 targetPosition; // Р¦РµР»СЊ РїРµСЂРµРјРµС‰РµРЅРёСЏ РєР°РјРµСЂС‹
 
     private void Awake()
     {
-        // Сохранение ссылки на камеру
+        // РЎРѕС…СЂР°РЅРµРЅРёРµ СЃСЃС‹Р»РєРё РЅР° РєР°РјРµСЂСѓ
         Instance = this;
     }
 
     private void Start()
     {
-        // Начальная цель = текущее положение камеры
+        // РќР°С‡Р°Р»СЊРЅР°СЏ С†РµР»СЊ = С‚РµРєСѓС‰РµРµ РїРѕР»РѕР¶РµРЅРёРµ РєР°РјРµСЂС‹
         targetPosition = transform.position;
     }
 
     private void LateUpdate()
     {
-        // Осуществление перемещения
+        // РћСЃСѓС‰РµСЃС‚РІР»РµРЅРёРµ РїРµСЂРµРјРµС‰РµРЅРёСЏ
         transform.position = Vector3.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
     }
 
-    // Метод вызываеться из триггера комнаты
+    // РњРµС‚РѕРґ РІС‹Р·С‹РІР°РµС‚СЊСЃСЏ РёР· С‚СЂРёРіРіРµСЂР° РєРѕРјРЅР°С‚С‹
     public void MoveToRoom(Vector3 roomCenter)
     {
-        // Установка новой цели камеры (z всегда одинаковый)
+        // РЈСЃС‚Р°РЅРѕРІРєР° РЅРѕРІРѕР№ С†РµР»Рё РєР°РјРµСЂС‹ (z РІСЃРµРіРґР° РѕРґРёРЅР°РєРѕРІС‹Р№)
         targetPosition = new Vector3(roomCenter.x, roomCenter.y, transform.position.z);
     }
 }

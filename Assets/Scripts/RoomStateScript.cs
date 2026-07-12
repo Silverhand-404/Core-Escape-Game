@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RoomStateScript : MonoBehaviour
 {
-    // состояние комнаты
+    // СЃРѕСЃС‚РѕСЏРЅРёРµ РєРѕРјРЅР°С‚С‹
     public GameObject state1;
     public GameObject state2;
     // false = state1 / true = state2
@@ -11,7 +11,7 @@ public class RoomStateScript : MonoBehaviour
     public void ChangeState()
     {
         currentState = !currentState;
-        // активация/деактивация объектов
+        // Р°РєС‚РёРІР°С†РёСЏ/РґРµР°РєС‚РёРІР°С†РёСЏ РѕР±СЉРµРєС‚РѕРІ
         state1.SetActive(!currentState);
         state2.SetActive(currentState);
     }

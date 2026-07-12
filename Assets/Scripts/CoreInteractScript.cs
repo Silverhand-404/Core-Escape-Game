@@ -17,11 +17,11 @@ public class CoreInteractScript : MonoBehaviour
 
     void PickUpCore()
     {
-        // игрок получает ядро
+        // РёРіСЂРѕРє РїРѕР»СѓС‡Р°РµС‚ СЏРґСЂРѕ
         player.hasCore = true;
-        // скрывание текста
+        // СЃРєСЂС‹РІР°РЅРёРµ С‚РµРєСЃС‚Р°
         interactText.SetActive(false);
-        // скрывание ядра
+        // СЃРєСЂС‹РІР°РЅРёРµ СЏРґСЂР°
         this.gameObject.SetActive(false);
     }
 
@@ -30,9 +30,9 @@ public class CoreInteractScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNearby = true;
-            // получение скрипта игрока
+            // РїРѕР»СѓС‡РµРЅРёРµ СЃРєСЂРёРїС‚Р° РёРіСЂРѕРєР°
             player = other.GetComponent<PlayerScript>();
-            // активация подсказки
+            // Р°РєС‚РёРІР°С†РёСЏ РїРѕРґСЃРєР°Р·РєРё
             interactText.SetActive(true);
         }
     }
@@ -42,7 +42,7 @@ public class CoreInteractScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNearby = false;
-            // скрытие подсказки
+            // СЃРєСЂС‹С‚РёРµ РїРѕРґСЃРєР°Р·РєРё
             interactText.SetActive(false);
             player = null;
         }

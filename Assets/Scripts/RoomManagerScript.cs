@@ -1,11 +1,11 @@
 using UnityEngine;
 
-//Singlton - доступен из любого скрипта
+//Singlton - РґРѕСЃС‚СѓРїРµРЅ РёР· Р»СЋР±РѕРіРѕ СЃРєСЂРёРїС‚Р°
 public class RoomManagerScript : MonoBehaviour
 {
     public static RoomManagerScript Instance;
 
-    // Команаты в порядке индексов
+    // РљРѕРјР°РЅР°С‚С‹ РІ РїРѕСЂСЏРґРєРµ РёРЅРґРµРєСЃРѕРІ
     public RoomStateScript[] rooms;
 
     private void Awake()
@@ -13,13 +13,13 @@ public class RoomManagerScript : MonoBehaviour
         Instance = this;
     }
 
-    // игрок вошел в комнату с индексом index
+    // РёРіСЂРѕРє РІРѕС€РµР» РІ РєРѕРјРЅР°С‚Сѓ СЃ РёРЅРґРµРєСЃРѕРј index
     public void PlayerEnteredRoom(int index)
     {
-        int left = index - 1; // левая команта
-        int right = index + 1; // правая команта
+        int left = index - 1; // Р»РµРІР°СЏ РєРѕРјР°РЅС‚Р°
+        int right = index + 1; // РїСЂР°РІР°СЏ РєРѕРјР°РЅС‚Р°
 
-        // проверка существования комнат
+        // РїСЂРѕРІРµСЂРєР° СЃСѓС‰РµСЃС‚РІРѕРІР°РЅРёСЏ РєРѕРјРЅР°С‚
         if (left >= 0)
         {
             rooms[left].ChangeState();

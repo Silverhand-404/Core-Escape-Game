@@ -12,7 +12,7 @@ public class DoorEscapeScript : MonoBehaviour
     {
         if (playerNearby && Input.GetKeyDown(KeyCode.E))
         {
-            // скрывание текста, остановка времени
+            // СЃРєСЂС‹РІР°РЅРёРµ С‚РµРєСЃС‚Р°, РѕСЃС‚Р°РЅРѕРІРєР° РІСЂРµРјРµРЅРё
             interactText.SetActive(false);
             End_Screen.SetActive(true);
             Time.timeScale = 0f;
@@ -23,14 +23,14 @@ public class DoorEscapeScript : MonoBehaviour
 
     public void RestartLevel()
     {
-        //Перезапуск уровня
+        //РџРµСЂРµР·Р°РїСѓСЃРє СѓСЂРѕРІРЅСЏ
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
     }
 
     public void QuitGame()
     {
-        // Выход из игры
+        // Р’С‹С…РѕРґ РёР· РёРіСЂС‹
         Application.Quit();
     }
 
@@ -39,7 +39,7 @@ public class DoorEscapeScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNearby = true;
-            // активация подсказки
+            // Р°РєС‚РёРІР°С†РёСЏ РїРѕРґСЃРєР°Р·РєРё
             interactText.SetActive(true);
         }
     }
@@ -49,7 +49,7 @@ public class DoorEscapeScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNearby = false;
-            // скрытие подсказки
+            // СЃРєСЂС‹С‚РёРµ РїРѕРґСЃРєР°Р·РєРё
             interactText.SetActive(false);
         }
     }

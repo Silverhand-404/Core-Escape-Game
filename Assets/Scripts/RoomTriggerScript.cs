@@ -3,22 +3,22 @@ using System.Collections;
 
 public class RoomTriggerScript : MonoBehaviour
 {
-    // индекс комнаты к которой принадлежит триггер
+    // РёРЅРґРµРєСЃ РєРѕРјРЅР°С‚С‹ Рє РєРѕС‚РѕСЂРѕР№ РїСЂРёРЅР°РґР»РµР¶РёС‚ С‚СЂРёРіРіРµСЂ
     public int roomIndex;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Проверка игрока по тегу
+        // РџСЂРѕРІРµСЂРєР° РёРіСЂРѕРєР° РїРѕ С‚РµРіСѓ
         if (other.CompareTag("Player"))
         {
-            // Вызов функции (движение камеры в центр комнаты)
+            // Р’С‹Р·РѕРІ С„СѓРЅРєС†РёРё (РґРІРёР¶РµРЅРёРµ РєР°РјРµСЂС‹ РІ С†РµРЅС‚СЂ РєРѕРјРЅР°С‚С‹)
             CameraScript.Instance.MoveToRoom(transform.parent.position);
 
-            // проверка что игрок существует и держит ядро
+            // РїСЂРѕРІРµСЂРєР° С‡С‚Рѕ РёРіСЂРѕРє СЃСѓС‰РµСЃС‚РІСѓРµС‚ Рё РґРµСЂР¶РёС‚ СЏРґСЂРѕ
             PlayerScript player = other.GetComponent<PlayerScript>();
             if (player != null && player.hasCore)
             {
-                // сообщение менеджеру что игрок вошел в комнату (С задержкой)
+                // СЃРѕРѕР±С‰РµРЅРёРµ РјРµРЅРµРґР¶РµСЂСѓ С‡С‚Рѕ РёРіСЂРѕРє РІРѕС€РµР» РІ РєРѕРјРЅР°С‚Сѓ (РЎ Р·Р°РґРµСЂР¶РєРѕР№)
                 StartCoroutine(ChangeRoomSate());
             }
         }
@@ -26,7 +26,7 @@ public class RoomTriggerScript : MonoBehaviour
 
     IEnumerator ChangeRoomSate()
     {
-        yield return new WaitForSeconds(0.5f); //задержка
+        yield return new WaitForSeconds(0.5f); //Р·Р°РґРµСЂР¶РєР°
         if (RoomManagerScript.Instance != null)
         {
             RoomManagerScript.Instance.PlayerEnteredRoom(roomIndex);
